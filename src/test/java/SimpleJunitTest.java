@@ -20,6 +20,11 @@ public class SimpleJunitTest {
         System.out.println("###    afterEach ()\n");
         result = 0;
     }
+
+    @AfterAll
+    static void afterAll() {
+        System.out.println("### afterAll ()\n");
+    }
         @Test
         void firstTest () {
             System.out.println("###    firstTest()");
@@ -44,8 +49,5 @@ public class SimpleJunitTest {
             return 3;
         }
 
-    @AfterAll
-    static void afterAll() {
-        System.out.println("### afterAll ()\n");
-    }
+
     }
