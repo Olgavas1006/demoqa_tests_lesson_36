@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTest {
@@ -72,4 +72,43 @@ public class PracticeFormTest {
         $(".table-responsive").shouldHave(text("NCR Delhi"));
 
     }
+
+    @Test
+    void minimalDataTest() {
+        open("/automation-practice-form");
+
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+
+        // Заполняем только обязательные поля
+        $("#firstName").setValue("Olga");
+        $("#lastName").setValue("Vasileva");
+        $("label[for='gender-radio-2']").click();
+        $("#userNumber").setValue("8900111445");
+
+        $("#submit").click();
+
+        // Проверяем, что форма отправилась с минимальным набором данных
+        $(".table-responsive").shouldHave(text("Olga Vasileva"));
+        $(".table-responsive").shouldHave(text("Female"));
+        $(".table-responsive").shouldHave(text("8900111445"));
+        $(".modal-header").shouldHave(text("Thanks for submitting the form"));
+    }
+
+    @Test
+    void negativeNumberTest() {
+        open("/automation-practice-form");
+
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+
+        $("#firstName").setValue("");
+        $("#lastName").setValue("Vasileva");
+        $("label[for='gender-radio-2']").click();
+        $("#userNumber").setValue("8900111445");
+        $("#submit").click();
+
+
+    }
+
 }
