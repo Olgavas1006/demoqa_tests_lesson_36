@@ -1,25 +1,28 @@
-package pages.components;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TextBoxPage {
-    private SelenideElement userName = $("#userName"),
+    private final SelenideElement userName = $("#userName"),
             userEmail = $("#userEmail"),
             currentAddress = $("#currentAddress"),
             permanentAddress = $("#permanentAddress"),
-            submitButton = $("#submit"),
-            outputName = $("#output #name"),
-            outputEmail = $("#output #email"),
-            outputCurrentAddress = $("#output #currentAddress"),
-            outputPermanentAddress = $("#output #permanentAddress");
+            submitButton = $("#submit");
+
 
     public TextBoxPage openPage() {
         open("https://demoqa.com/text-box");
-        executeJavaScript("$('footer').remove();");
-        executeJavaScript("$('#fixedban').remove();");
+
+        return this;
+    }
+
+    public TextBoxPage removeBanner() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
@@ -48,10 +51,10 @@ public class TextBoxPage {
         return this;
     }
 
-    public void checkResults(String name, String email, String currentAddr, String permanentAddr) {
-        outputName.shouldHave(text(name));
-        outputEmail.shouldHave(text(email));
-        outputCurrentAddress.shouldHave(text(currentAddr));
-        outputPermanentAddress.shouldHave(text(permanentAddr));
+    public TextBoxPage checkResults(String key,String value) {
+        $(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
     }
 }

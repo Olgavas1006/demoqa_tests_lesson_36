@@ -1,6 +1,8 @@
-package pages.components;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
+import pages.components.TableComponent;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -8,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
-    private SelenideElement firstNameInput = $("#firstName"),
+    private final SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
             genderWrapper = $("#genterWrapper"),
@@ -24,13 +26,18 @@ public class RegistrationPage {
             submitButton = $("#submit");
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    TableComponent tableComponent = new TableComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-        executeJavaScript("$('footer').remove();");
-        executeJavaScript("$('#fixedban').remove();");
 
+        return this;
+    }
+
+    public RegistrationPage removeBanner() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         return this;
     }
 
@@ -113,16 +120,9 @@ public class RegistrationPage {
     }
 
     public RegistrationPage checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
+        tableComponent.checkTableComponent(key, value);
 
         return this;
     }
 
-    public RegistrationPage checkResultNegative(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
-
-        return this;
-    }
 }
