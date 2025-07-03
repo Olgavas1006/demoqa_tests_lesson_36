@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -16,7 +17,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setEmail("olgatest@v.com")
                 .setGender("Female")
                 .setUserNumber("8900111445")
-                .setDateOfBirth( "6","November", "1987" )
+                .setDateOfBirth( "06","November", "1987" )
                 .setSubjects("Biology")
                 .setHobbies("Sports")
                 .setUploadPicture("котик.jpg")
