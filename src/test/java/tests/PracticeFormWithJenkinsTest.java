@@ -46,7 +46,7 @@ public class PracticeFormWithJenkinsTest {
         $("label[for='hobbies-checkbox-1']").click();
         $("label[for='hobbies-checkbox-2']").click();
         $("#uploadPicture").uploadFromClasspath("cat.jpg");
-        $("#currentAddress").setValue("Уфа, Владивостокская 23");
+        $("#currentAddress").setValue("Ufa, Vladivostokskaya 23");
         $("#state").click();
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#city").click();
@@ -63,7 +63,7 @@ public class PracticeFormWithJenkinsTest {
         $(".table-responsive").shouldHave(text("Biology"));
         $(".table-responsive").shouldHave(text("Sports, Reading"));
         $(".table-responsive").shouldHave(text("cat.jpg"));
-        $(".table-responsive").shouldHave(text("Уфа, Владивостокская 23"));
+        $(".table-responsive").shouldHave(text("Ufa, Vladivostokskaya 23"));
         $(".table-responsive").shouldHave(text("NCR Delhi"));
         });
     }
