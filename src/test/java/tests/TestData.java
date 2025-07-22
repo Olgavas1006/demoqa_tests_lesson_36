@@ -19,7 +19,7 @@ public class TestData {
 
    public static String subject = faker.options().option("Math", "Biology", "Chemistry", "Physics");
    public static String hobby = faker.options().option("Sports", "Reading", "Music");
-   public static String pictureName = faker.options().option("котик.jpg");
+   public static String pictureName = faker.options().option("cat.jpg");
    public static String currentAddress = faker.address().fullAddress();
    public static String state = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
    public static String city = getRandomCity(state);

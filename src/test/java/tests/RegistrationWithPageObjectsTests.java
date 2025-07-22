@@ -1,6 +1,5 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -20,7 +19,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setDateOfBirth( "06","November", "1987" )
                 .setSubjects("Biology")
                 .setHobbies("Sports")
-                .setUploadPicture("котик.jpg")
+                .setUploadPicture("cat.jpg")
                 .setCurrentAddress("Уфа, Владивостокская 23")
                 .setState("NCR")
                 .setCity("Delhi")
@@ -32,7 +31,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .checkResult("Date of Birth", "06 November,1987")
                 .checkResult("Subjects", "Biology")
                 .checkResult("Hobbies", "Sports")
-                .checkResult("Picture", "котик.jpg")
+                .checkResult("Picture", "cat.jpg")
                 .checkResult("Address", "Уфа, Владивостокская 23")
                 .checkResult("State and City", "NCR Delhi");
 

@@ -91,7 +91,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setUploadPicture (String value) {
-        uploadPictureInput.uploadFromClasspath("котик.jpg");
+        uploadPictureInput.uploadFromClasspath("cat.jpg");
 
         return this;
     }
