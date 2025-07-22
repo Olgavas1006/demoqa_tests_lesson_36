@@ -14,8 +14,7 @@ public class TestData {
    public static String day = String.format("%02d", faker.number().numberBetween(1, 30));
    public static String month = faker.options().option(
             "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-    );
+            "July", "August", "September", "October", "November", "December");
    public static String year = String.valueOf(faker.number().numberBetween(1900, 2100));
 
    public static String subject = faker.options().option("Math", "Biology", "Chemistry", "Physics");
