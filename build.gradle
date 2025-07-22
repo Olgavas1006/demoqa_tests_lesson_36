@@ -40,6 +40,14 @@ dependencies {
     )
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 }
+sourceSets {
+    test {
+        resources {
+            srcDirs = ['src/test/resources']
+            includes = ['**/*.jpg', '**/*.png']
+        }
+    }
+}
 
 test {
     useJUnitPlatform()
