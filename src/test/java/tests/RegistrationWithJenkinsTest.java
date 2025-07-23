@@ -24,7 +24,7 @@ public class RegistrationWithJenkinsTest extends TestBaseWithJenkins {
                 .setEmail("olgatest@v.com")
                 .setGender("Female")
                 .setUserNumber("8900111445")
-                .setDateOfBirth( "06","November", "1987" )
+                .setDateOfBirth( "6","November", "1987" )
                 .setSubjects("Biology")
                 .setHobbies("Sports")
                 .setUploadPicture("cat.jpg")
