@@ -49,12 +49,15 @@ sourceSets {
     }
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
     systemProperties(System.getProperties())
+
     testLogging {
-        events "passed", "skipped", "failed"
-        showStandardStreams = true
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
     }
 }
 
@@ -68,5 +71,10 @@ task demoqa_test(type: Test) {
 task form_test(type: Test) {
     useJUnitPlatform {
         includeTags("form")
+    }
+}
+task property_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("property")
     }
 }
