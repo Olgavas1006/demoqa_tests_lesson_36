@@ -8,7 +8,7 @@ public class SystemPropertiesTests {
     @Tag("form")
     void systemPropertiesTest() {
         String browser = System.getProperty("browser", "firefox");
-        String version = System.getProperty("version", "124.0");
+        String version = System.getProperty("version", "124");
         String windowSize = System.getProperty("windowSize", "1920x1080");
 
         System.out.println(browser);
@@ -20,7 +20,7 @@ public class SystemPropertiesTests {
     @Tag("property")
     void systemProperties1Test() {
         String browser = System.getProperty("browser", "chrome");
-        String version = System.getProperty("version", "131.0");
+        String version = System.getProperty("version", "131");
         String windowSize = System.getProperty("windowSize", "1280x720");
 
         System.out.println(browser);
