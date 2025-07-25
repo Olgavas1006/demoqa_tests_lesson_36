@@ -73,8 +73,3 @@ task form_test(type: Test) {
         includeTags("form")
     }
 }
-task property_test(type: Test) {
-    useJUnitPlatform{
-        includeTags("property")
-    }
-}

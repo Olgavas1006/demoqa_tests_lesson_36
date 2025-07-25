@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTests {
     @Test
-    @Tag("property")
+    @Tag("form")
     void systemPropertiesTest() {
         String browser = System.getProperty("browser", "firefox");
         String version = System.getProperty("version", "124.0");
@@ -21,12 +21,11 @@ public class SystemPropertiesTests {
     void systemProperties1Test() {
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "131.0");
-        String windowSize = System.getProperty("windowSize", "1920x1080");
+        String windowSize = System.getProperty("windowSize", "1280x720");
 
         System.out.println(browser);
         System.out.println(version);
         System.out.println(windowSize);
     }
-
 
 }
