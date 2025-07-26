@@ -17,7 +17,7 @@ public class SystemPropertiesTests {
     }
 
     @Test
-    @Tag("property")
+    @Tag("form")
     void systemProperties1Test() {
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "131");
