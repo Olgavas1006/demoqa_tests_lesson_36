@@ -1,6 +1,8 @@
 package helpers;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -30,10 +32,10 @@ public class Attach {
     }
 
     public static void browserConsoleLogs() {
-        attachAsText(
-                "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
-        );
+        if (!Configuration.browser.equals("firefox")) { // Пропускаем Firefox
+            String logs = String.join("\n", Selenide.getWebDriverLogs("browser"));
+            Allure.addAttachment("Console logs", "text/plain", logs);
+        }
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
