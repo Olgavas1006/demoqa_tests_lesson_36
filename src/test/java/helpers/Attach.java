@@ -32,10 +32,10 @@ public class Attach {
     }
 
     public static void browserConsoleLogs() {
-        if (!Configuration.browser.equals("firefox")) { // Пропускаем Firefox
-            String logs = String.join("\n", Selenide.getWebDriverLogs("browser"));
-            Allure.addAttachment("Console logs", "text/plain", logs);
-        }
+        attachAsText(
+                "Browser console logs",
+                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+        );
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
