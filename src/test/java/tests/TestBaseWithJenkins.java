@@ -16,7 +16,7 @@ public class TestBaseWithJenkins {
         Configuration.browser = System.getProperty("browser", "firefox");
         Configuration.browserVersion = System.getProperty("version", "124");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");;
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         Configuration.pageLoadStrategy = "eager";
         Configuration.remote =System.getProperty ("selenoid.url");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
