@@ -13,9 +13,12 @@ import java.util.Map;
 public class TestBaseWithJenkins {
     @BeforeAll
     static void setUp() {
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browser = System.getProperty("browser", "firefox");
+        Configuration.browserVersion = System.getProperty("version", "124");
+        Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");;
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote =System.getProperty ("selenoid.url");
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
