@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTests {
     @Test
-    @Tag("form")
     void systemPropertiesTest() {
         String browser = System.getProperty("browser", "firefox");
         String version = System.getProperty("version", "124");
@@ -17,7 +16,6 @@ public class SystemPropertiesTests {
     }
 
     @Test
-    @Tag("form")
     void systemProperties1Test() {
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "131");
