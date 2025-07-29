@@ -1,8 +1,6 @@
 package helpers;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
