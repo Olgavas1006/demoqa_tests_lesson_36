@@ -15,7 +15,7 @@ public class TestBaseWithJenkins {
     @BeforeAll
     static void setUp() {
         Configuration.browser = System.getProperty("browser", "firefox");
-        Configuration.browserVersion = System.getProperty("version", "124");
+        Configuration.browserVersion = System.getProperty("version", "125");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
         Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         Configuration.pageLoadStrategy = "eager";
