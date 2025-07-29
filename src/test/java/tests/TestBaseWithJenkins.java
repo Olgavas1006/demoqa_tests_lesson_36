@@ -13,8 +13,8 @@ import java.util.Map;
 
 public class TestBaseWithJenkins {
 
-    @BeforeEach
-    void addListener() {
+    @BeforeAll
+    static void setUp() {
         Configuration.browser = System.getProperty("browser", "firefox");
         Configuration.browserVersion = System.getProperty("version", "125");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
@@ -28,6 +28,11 @@ public class TestBaseWithJenkins {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeEach
+    void addListener() {
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
