@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.Selenide.sessionId;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static com.codeborne.selenide.WebDriverRunner.isFirefox;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
@@ -35,6 +36,7 @@ public class Attach {
                 String.join("\n", Selenide.getWebDriverLogs(BROWSER))
         );
     }
+
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String addVideo() {

@@ -17,7 +17,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-notifications/draft.txt
+draft.txt
+config.json
 *.env
 
 ### Eclipse ###
